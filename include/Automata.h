@@ -7,6 +7,7 @@
 
 
 class CoffeeMachine {
+
 public:
     CoffeeMachine(int* prices, std::string* drinks, int count);
     void on();
@@ -19,6 +20,7 @@ public:
     void cancel();
     void cook();
     void finish();
+
 private:
     enum State { OFF, WAIT, ACCEPT, CHOICE, CHECK, COOK };
     int* _prices;
