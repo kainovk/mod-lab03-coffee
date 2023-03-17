@@ -3,6 +3,11 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
+CoffeeMachine prepareCoffeeMachine() {
+    std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
+    int prices[] = { 10, 15, 20 };
+    return CoffeeMachine(prices, drinks, 3);
+}
 
 TEST(task3, testShouldEndInWaitState) {
     CoffeeMachine machine = prepareCoffeeMachine();
@@ -50,10 +55,4 @@ TEST(task3, testShouldEndInChoiceStateIfNotEnoughCoins) {
     std::string actual = machine.getState();
 
     EXPECT_EQ(expected, actual);
-}
-
-CoffeeMachine prepareCoffeeMachine() {
-    std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
-    int prices[] = { 10, 15, 20 };
-    return CoffeeMachine(prices, drinks, 3);
 }
