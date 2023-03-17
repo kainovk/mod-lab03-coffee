@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
+
 CoffeeMachine prepareCoffeeMachine() {
     std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
     int prices[] = { 10, 15, 20 };
@@ -14,7 +15,6 @@ TEST(task3, testShouldEndInWaitState) {
     std::string expected = "WAIT";
 
     machine.on();
-    std::cout << "Menu:\n" << machine.getMenu() << std::endl;
     machine.coin(20);
     machine.choice(2);
     machine.check();
@@ -30,7 +30,6 @@ TEST(task3, testShouldEndInChoiceStateIfChoiseIsNotInRange) {
     std::string expected = "CHOISE";
 
     machine.on();
-    std::cout << "Menu:\n" << machine.getMenu() << std::endl;
     machine.coin(20);
     machine.choice(4);
     machine.check();
@@ -46,7 +45,6 @@ TEST(task3, testShouldEndInChoiceStateIfNotEnoughCoins) {
     std::string expected = "CHOISE";
 
     machine.on();
-    std::cout << "Menu:\n" << machine.getMenu() << std::endl;
     machine.coin(19);
     machine.choice(3);
     machine.check();
