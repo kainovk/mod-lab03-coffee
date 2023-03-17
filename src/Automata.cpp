@@ -60,6 +60,9 @@ void CoffeeMachine::cook() {
 
 void CoffeeMachine::finish() {
     if (_state == COOK) {
+        if (_chosen == -1) {
+            std::cout << "Take your " << _drinks[_chosen] << std::endl;
+        }
         std::cout << "Take your " << _drinks[_chosen] << std::endl;
         _state = WAIT;
         _chosen = -1;

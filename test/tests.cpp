@@ -4,14 +4,10 @@
 #include "Automata.h"
 
 
-CoffeeMachine prepareCoffeeMachine() {
+TEST(task3, testShouldEndInWaitState) {
     std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
     int prices[] = { 10, 15, 20 };
-    return CoffeeMachine(prices, drinks, 3);
-}
-
-TEST(task3, testShouldEndInWaitState) {
-    CoffeeMachine machine = prepareCoffeeMachine();
+    CoffeeMachine machine(prices, drinks, 3);
     std::string expected = "WAIT";
 
     machine.on();
@@ -26,7 +22,9 @@ TEST(task3, testShouldEndInWaitState) {
 }
 
 TEST(task3, testShouldEndInChoiceStateIfChoiseIsNotInRange) {
-    CoffeeMachine machine = prepareCoffeeMachine();
+    std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
+    int prices[] = { 10, 15, 20 };
+    CoffeeMachine machine(prices, drinks, 3);
     std::string expected = "CHOICE";
 
     machine.on();
@@ -41,7 +39,9 @@ TEST(task3, testShouldEndInChoiceStateIfChoiseIsNotInRange) {
 }
 
 TEST(task3, testShouldEndInChoiceStateIfNotEnoughCoins) {
-    CoffeeMachine machine = prepareCoffeeMachine();
+    std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
+    int prices[] = { 10, 15, 20 };
+    CoffeeMachine machine(prices, drinks, 3);
     std::string expected = "CHOICE";
 
     machine.on();
