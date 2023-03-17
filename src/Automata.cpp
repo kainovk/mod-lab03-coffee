@@ -69,7 +69,7 @@ void CoffeeMachine::finish() {
 std::string CoffeeMachine::getMenu() {
     std::string menu;
     for (int i = 0; i < _count; ++i) {
-        menu += std::to_string(i + 1) + ". " + _drinks[i] + 
+        menu += std::to_string(i + 1) + ". " + _drinks[i] +
             " - " + std::to_string(_prices[i]) + " $\n";
     }
     return menu;
