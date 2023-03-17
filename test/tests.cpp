@@ -7,8 +7,7 @@
 CoffeeMachine prepareCoffeeMachine() {
     std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
     int prices[] = { 10, 15, 20 };
-    CoffeeMachine result(prices, drinks, 3);
-    return result;
+    return CoffeeMachine(prices, drinks, 3);
 }
 
 TEST(task3, testShouldEndInWaitState) {
@@ -28,7 +27,7 @@ TEST(task3, testShouldEndInWaitState) {
 
 TEST(task3, testShouldEndInChoiceStateIfChoiseIsNotInRange) {
     CoffeeMachine machine = prepareCoffeeMachine();
-    std::string expected = "CHOISE";
+    std::string expected = "CHOICE";
 
     machine.on();
     machine.coin(20);
@@ -43,7 +42,7 @@ TEST(task3, testShouldEndInChoiceStateIfChoiseIsNotInRange) {
 
 TEST(task3, testShouldEndInChoiceStateIfNotEnoughCoins) {
     CoffeeMachine machine = prepareCoffeeMachine();
-    std::string expected = "CHOISE";
+    std::string expected = "CHOICE";
 
     machine.on();
     machine.coin(19);

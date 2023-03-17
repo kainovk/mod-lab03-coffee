@@ -3,8 +3,8 @@
 
 
 CoffeeMachine::CoffeeMachine(int* prices, std::string* drinks, int count)
-    : _balance(0), _chosen(-1), _state(OFF), _prices(prices),
-    _drinks(drinks), _count(count) {}
+    : _balance(0), _chosen(-1), _state(OFF),
+    _prices(prices), _drinks(drinks), _count(count) {}
 
 void CoffeeMachine::on() {
     if (_state == OFF) {
