@@ -7,7 +7,8 @@
 CoffeeMachine prepareCoffeeMachine() {
     std::string drinks[] = { "Espresso", "Cappuccino", "Latte" };
     int prices[] = { 10, 15, 20 };
-    return CoffeeMachine(prices, drinks, 3);
+    CoffeeMachine result(prices, drinks, 3);
+    return result;
 }
 
 TEST(task3, testShouldEndInWaitState) {
